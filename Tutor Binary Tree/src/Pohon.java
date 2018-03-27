@@ -15,9 +15,9 @@
 // gitu terus sampe ketemu lahan yang kosong.
 public class Pohon {
 	// Inisialisasi data, tetangga pohon kiri, tetangga pohon kanan
-	int data;
-	Pohon kiri;
-	Pohon kanan;
+	private int data;
+	private Pohon kiri;
+	private Pohon kanan;
 	
 	//Constructor
 	public Pohon(int data){
@@ -66,7 +66,7 @@ public class Pohon {
 			
 	}
 	
-	// Di pohon biner ada 3 cara ngeluarin output
+	// Di pohon biner ada 3 cara transversing a tree, yaitu
 	// 1. in-order, kiri, tengah, kanan
 	// 2. pre-order, tengah, kiri, kanan
 	// 3. post-order, kiri, kanan, tengah
@@ -83,19 +83,19 @@ public class Pohon {
 	public void PrintPreOrder(){
 		System.out.println(data);
 		if (kiri!=null){
-			kiri.PrintInOrder();
+			kiri.PrintPreOrder();
 		}
 		if (kanan!=null){
-			kanan.PrintInOrder();
+			kanan.PrintPreOrder();
 		}
 	}
 	
 	public void PrintPostOrder(){
 		if (kiri!=null){
-			kiri.PrintInOrder();
+			kiri.PrintPostOrder();
 		}
 		if (kanan!=null){
-			kanan.PrintInOrder();
+			kanan.PrintPostOrder();
 		}
 		System.out.println(data);
 	}
